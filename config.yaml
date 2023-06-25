@@ -1,0 +1,9 @@
+artifacts:
+  ARTIFACTS_DIR: artifacts
+  PREPARED_DATA: prepared
+  TRAIN_DATA: train.tsv
+  TEST_DATA: test.tsv
+
+local_data_file_path: "data.xml"
+
+split_ratio: 0.2
