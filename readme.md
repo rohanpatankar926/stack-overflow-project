@@ -1,5 +1,14 @@
 ##### session4
 
+**for running the python script**
+`go to github https://hithub.com/rohanpatankar926`
+`copy the link which is inside green button cpoy https link`
+`goto vs code`
+`git clone https://github.com/rohanpatankar926/stack-overflow-project.git`
+`cd stack-overflow-project`
+`pip install -r requirements.txt`
+`python merge_pipeline.py`
+
 **utils.py**<br>
 This has 2 function<br>
 1.process_posts<br>
