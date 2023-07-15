@@ -3,7 +3,6 @@ from utils import process_data
 from utils import read_yaml
 STAGE="STAGE 01 PREPARE DATA"
 
-
 def preparedata(config_path):
     config=read_yaml(config_path=config_path)
     input_data=config["local_data_file_path"]

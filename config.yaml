@@ -11,9 +11,20 @@ artifacts:
   FEATURIZED_TRAIN_DATA: train.pkl
   FEATURIZED_TEST_DATA: test.pkl
 
+  #3rd pipeline
+  MODEL_DIR: models
+  MODEL_PATH: model.pkl
+
+
+  #4th pipeline
+  JSON_ROC_PATH: ROC.json
+  PREC_JSON_PATH: PRECISION.json
+  SCORE_FILE_PATH: SCORES.json
+
 local_data_file_path: "data.xml"
 
 split_ratio: 0.2
+
 
 featurize:
   max_features: 2500
