@@ -44,5 +44,3 @@ def evaluate(config_path):
     fpr,tpr,threshold=metrics.roc_curve(labels,predictions)
     roc_data={"roc":[{"fpr":fp,"tpr":tp,"threshold":t} for fp,tp,t in zip(fpr,tpr,threshold)]}
     json.dump(roc_data,open(ROC_JSON_PATH,"w"))
-
-evaluate("config.yaml")

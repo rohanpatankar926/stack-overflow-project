@@ -15,7 +15,7 @@ async def model():
     return HTMLResponse(content=message)
 
 @app.get("/predict")
-def predict(response:Response):
+async def predict(response:Response):
     model_path="artifacts/models/model.pkl"
     transformer_path="artifacts/features/transformer.pkl"
     prediction_service.inferencing_pipeline_batch(model_path,transformer_path,"data.tsv")
