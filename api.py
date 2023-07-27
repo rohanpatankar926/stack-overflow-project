@@ -1,7 +1,6 @@
 from inferencing_pipeline import prediction_service
 from fastapi import FastAPI,Response
 from fastapi.responses import HTMLResponse
-import os
 import uvicorn
 import pandas as pd
 app=FastAPI()

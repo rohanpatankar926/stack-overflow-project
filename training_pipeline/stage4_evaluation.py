@@ -14,6 +14,7 @@ def evaluate(config_path):
     artifacts=config["artifacts"]["ARTIFACTS_DIR"]
     featurized_data_dir_path=os.path.join(artifacts,config["artifacts"]["FEATURE_DIR"])
     featurized_test_data_path=os.path.join(featurized_data_dir_path,config["artifacts"]["FEATURIZED_TEST_DATA"])
+    
     model_dir=os.path.join(artifacts,config["artifacts"]["MODEL_DIR"])
     model_path=os.path.join(model_dir,config["artifacts"]["MODEL_PATH"])
 
@@ -32,12 +33,16 @@ def evaluate(config_path):
         "roc_auc_score":roc_auc,
         "average_precision_score":avg_precision
     }
+    print(scores)
     json.dump(scores,open(score_json_path,"w"))
     precision,recall,threshold=metrics.precision_recall_curve(labels,predictions)
     nth_points=math.ceil(len(precision)/100)
+    print(nth_points)
     prc_point=list(zip(precision,recall,threshold))[::nth_points]
     prec_points=[{"precision":p,"recall":r,"threshold":t} for p,r,t in prc_point]
     json.dump(prec_points,open(PREC_JSON_PATH,"w"))
     fpr,tpr,threshold=metrics.roc_curve(labels,predictions)
     roc_data={"roc":[{"fpr":fp,"tpr":tp,"threshold":t} for fp,tp,t in zip(fpr,tpr,threshold)]}
     json.dump(roc_data,open(ROC_JSON_PATH,"w"))
+
+evaluate("config.yaml")

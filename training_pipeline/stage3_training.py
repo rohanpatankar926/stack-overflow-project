@@ -24,4 +24,4 @@ def training(config_path):
     model.fit(X,labels)
     joblib.dump(model,model_path)
 
-training(config_path="config.yaml")
+

@@ -25,3 +25,11 @@ This consists of key and value pairs where all the metadata of directory names a
 
 **merge_pipeline.py**<br>
 This is the final script where we merge all the particular `training_pipeline` modules and call at once...<br>
+
+
+**inferencing pipeline**<br>
+This will help us to load the trained models and transformer objects and help to inference with the new data that will be either batch data or either the single user input<br>
+
+
+
+
